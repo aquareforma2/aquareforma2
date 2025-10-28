@@ -1,0 +1,355 @@
+/* =============================
+   ESTILOS GENERALES
+============================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden; /* Evita doble scroll horizontal */
+  width: 100%;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  background: #fff;
+}
+
+/* =============================
+   HEADER
+============================= */
+header {
+  background: #f8f9fa;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 10%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+header img {
+  height: 60px;
+}
+
+nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #0099cc;
+}
+
+/* =============================
+   SECCIONES
+============================= */
+section {
+  padding: 80px 10%;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2.4rem;
+  margin-bottom: 1.5rem;
+  color: #0099cc;
+}
+
+/* =============================
+   INICIO
+============================= */
+#inicio {
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+  url('img/fondo-inicio.jpg') no-repeat center/cover;
+  color: #fff;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#inicio h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+
+#inicio p {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+}
+
+.boton {
+  background: #0099cc;
+  color: #fff;
+  padding: 12px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.boton:hover {
+  background: #007fa8;
+}
+
+/* TÍTULO PRINCIPAL CON LOGO */
+.titulo-logo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.titulo-logo .logo-inicio {
+  height: 100px;
+  width: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.titulo-principal {
+  font-size: 5rem;
+  color: #0099cc;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+}
+
+/* =============================
+   NUESTROS SERIVICIOS (NUEVO DISEÑO)
+============================= */
+#servicios {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+  url('img/fondo-servicios.jpg') no-repeat center/cover;
+  color: #fff;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+#servicios h2 {
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  color: #fff;
+}
+
+/* GRID de 7 columnas */
+.servicios-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Tarjeta individual */
+.servicio {
+  background-color: #0099cc;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.servicio:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
+
+/* Imagen cuadrada */
+.servicio img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+
+/* Texto */
+.servicio p {
+  margin: 0;
+  padding: 0.8rem;
+  font-size: 1rem;
+  color: #fff;
+  font-weight: 500;
+}
+
+/* Responsivo */
+@media (max-width: 1280px) {
+  .servicios-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .servicios-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .servicios-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* =============================
+   GALERÍA
+============================= */
+.galeria-contenedor {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.galeria {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+}
+
+.galeria img {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+/* Botones de navegación */
+.btn-galeria {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+  transition: background 0.3s;
+}
+
+.btn-galeria:hover {
+  background: rgba(0,0,0,0.7);
+}
+
+.btn-galeria.prev { left: 10px; }
+.btn-galeria.next { right: 10px; }
+
+/* =============================
+   MODAL (imagen ampliada)
+============================= */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
+}
+
+.modal-contenido {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 80vh;
+  border-radius: 10px;
+}
+
+.cerrar {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+}
+.cerrar:hover {
+  color: #ccc;
+}
+
+/* =============================
+   QUIÉNES SOMOS
+============================= */
+#quienes p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* =============================
+   CONTACTO
+============================= */
+.contacto-info {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+.contacto-info a {
+  color: #0099cc;
+  text-decoration: none;
+}
+.contacto-info a:hover {
+  text-decoration: underline;
+}
+
+/* =============================
+   FOOTER
+============================= */
+footer {
+  background: #f0f0f0;
+  color: #555;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+}
+
+/* =============================
+   RESPONSIVE HEADER
+============================= */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 5%;
+    text-align: center;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 0;
+    margin: 10px 0 0;
+  }
+
+  nav a {
+    font-size: 1rem;
+  }
+}
+
+/* Animación suave */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

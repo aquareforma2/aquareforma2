@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://aquareforma2.es/sitemap.xml
+Sitemap: https://www.aquareforma2.es/sitemap.xml
+
